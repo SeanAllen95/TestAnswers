@@ -133,6 +133,7 @@ namespace TechnicalTest.Core.Tests.Factories
         {
             var expectedResult = new GridValue("A1");
             var grid = new Grid(10);
+            //These shape coordinates don't match triangle A1, when they are changed the test still passes
             var shape = new Shape(new List<Coordinate> { new(0, 0), new(0, 0), new(10, 10) });
             var shapeEnum = ShapeEnum.Triangle;
 
