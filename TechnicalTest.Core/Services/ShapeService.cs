@@ -9,9 +9,7 @@ namespace TechnicalTest.Core.Services
         {
             // TODO: Calculate the coordinates.
 
-            int triangleRow = gridValue.GetNumericRow();
-
-            int v3Y = triangleRow * grid.Size;
+            int v3Y = gridValue.GetNumericRow() * grid.Size;
             int v3X;
             int v2Y = v3Y - grid.Size;
             int v2X;
@@ -50,7 +48,9 @@ namespace TechnicalTest.Core.Services
                 column = (triangle.BottomRightVertex.X + triangle.TopLeftVertex.X) / grid.Size;
             }
 
-            return new GridValue(row, column);
+            GridValue gridValueResults = new (row, column);
+
+            return gridValueResults;
         }
     }
 }

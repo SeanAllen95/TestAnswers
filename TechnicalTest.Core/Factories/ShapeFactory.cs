@@ -38,11 +38,10 @@ namespace TechnicalTest.Core.Factories
                     // TODO: Return grid value returned from service.
                     Triangle triangle = new (shape.Coordinates[0], shape.Coordinates[1], shape.Coordinates[2]);
                     var triangleValues = _shapeService.ProcessGridValueFromTriangularShape(grid, triangle);
-                    string row = triangleValues.Row.ToString();
-                    string column = triangleValues.Column.ToString();
-                    GridValue results = new (row + column );
+
+                    GridValue calculateGridValueResults = new (triangleValues.Row + triangleValues.Column);
                 
-                    return results;
+                    return calculateGridValueResults;
                 default:
                     return null;
             }

@@ -52,13 +52,13 @@ namespace TechnicalTest.API.Controllers
             Grid grid = new (calculateCoordinatesRequest.Grid.Size);
             GridValue gridValue = new (calculateCoordinatesRequest.GridValue);
             ShapeEnum shapeEnum = ShapeEnum.Triangle;
-            var results = _shapeFactory.CalculateCoordinates(shapeEnum, grid, gridValue);
+            var calculateCoordinatesResults = _shapeFactory.CalculateCoordinates(shapeEnum, grid, gridValue);
 
-            if (results == null){
+            if (calculateCoordinatesResults == null){
                 return BadRequest("Results are null!");
             }
             
-            return Ok(results);
+            return Ok(calculateCoordinatesResults);
         }
 
         /// <summary>
@@ -94,13 +94,13 @@ namespace TechnicalTest.API.Controllers
             Shape shape = new (new List<Coordinate> { coordinate1, coordinate2, coordinate3 });
             ShapeEnum shapeEnum = ShapeEnum.Triangle;
 
-            var results = _shapeFactory.CalculateGridValue(shapeEnum, grid, shape);
+            var calculateGridValueResults = _shapeFactory.CalculateGridValue(shapeEnum, grid, shape);
 
-            if (results == null){
+            if (calculateGridValueResults == null){
                 return BadRequest("Results are null!");
             }
 
-            return Ok(results);
+            return Ok(calculateGridValueResults);
         }
     }
 }

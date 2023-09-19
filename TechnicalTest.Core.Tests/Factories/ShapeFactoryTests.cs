@@ -142,10 +142,11 @@ namespace TechnicalTest.Core.Tests.Factories
             var shapeFactory = new ShapeFactory(_shapeService.Object);
             var actualResult = shapeFactory.CalculateGridValue(shapeEnum, grid, shape);
 
-            Console.WriteLine(expectedResult.GetHashCode());
-            Console.WriteLine(actualResult.GetHashCode());
             Assert.NotNull(actualResult);
-            Assert.Equal(expectedResult, actualResult);
+            // Changed Assert.Equal() because it is comparing objects which cause the test to fail
+            // Assert.Equal(expectedResult, actualResult);
+            Assert.Equal(expectedResult.Column, actualResult.Column);
+            Assert.Equal(expectedResult.Row, actualResult.Row);
         }
 
         [Fact]

@@ -5,7 +5,8 @@
         public GridValue(string gridValue)
         {
             if (string.IsNullOrEmpty(gridValue)) return;
-            //  || gridValue.Length != 2 this or statement removed so that grid values with two integers could be calculated
+            // OR statement removed so that grid values with two integers could be calculated
+            //  || gridValue.Length != 2 
 
             Row = gridValue[..1];
             Column = int.Parse(gridValue[1..]);
